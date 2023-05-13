@@ -170,10 +170,10 @@ function addConsole(storyFn, context, consoleOptions) {
   const prevOptions = { ...currentOptions };
   const logNames = context
     ? {
-      log: `${context.kind}/${context.story}`,
-      warn: `${context.kind}/${context.story}/warn`,
-      error: `${context.kind}/${context.story}/error`,
-    }
+        log: `${context.kind}/${context.story}`,
+        warn: `${context.kind}/${context.story}/warn`,
+        error: `${context.kind}/${context.story}/error`,
+      }
     : {};
 
   const options = {
@@ -185,7 +185,11 @@ function addConsole(storyFn, context, consoleOptions) {
   setScope(options);
   const story = storyFn();
   const wrapStory = handleStoryLogs();
-  const wrappedStory = wrapStory(story, () => setScope(options), () => setScope(currentOptions));
+  const wrappedStory = wrapStory(
+    story,
+    () => setScope(options),
+    () => setScope(currentOptions)
+  );
 
   currentOptions = prevOptions;
   setScope(currentOptions);

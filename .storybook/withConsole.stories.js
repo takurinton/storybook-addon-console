@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 
-import React from "react";
-import { setConsoleOptions } from "../src";
-import { Button, Badge } from "./Component";
+import React from 'react';
+import { setConsoleOptions } from '../src';
+import { Button, Badge } from './Component';
 
 export default {
-  title: "With Console",
+  title: 'With Console',
   component: Button,
   args: {},
 };
@@ -13,32 +13,28 @@ export default {
 export const WithLog = {
   render: () =>
     setConsoleOptions(() => (
-      <Button onClick={() => console.log("Data:", 1, 3, 4)}>Log Button</Button>
+      <Button onClick={() => console.log('Data:', 1, 3, 4)}>Log Button</Button>
     )),
 };
 
 export const WithWarning = {
   render: () =>
     setConsoleOptions(() => (
-      <Button onClick={() => console.warn("Data:", 1, 3, 4)}>
-        Warn Button
-      </Button>
+      <Button onClick={() => console.warn('Data:', 1, 3, 4)}>Warn Button</Button>
     )),
 };
 
 export const WithError = {
   render: () =>
     setConsoleOptions(() => (
-      <Button onClick={() => console.error("Test Error")}>Error Button</Button>
+      <Button onClick={() => console.error('Test Error')}>Error Button</Button>
     )),
 };
 
 export const WithUncatchedError = {
   render: () =>
     setConsoleOptions(() => (
-      <Button onClick={() => console.log("Data:", T.buu.foo)}>
-        Throw Button
-      </Button>
+      <Button onClick={() => console.log('Data:', T.buu.foo)}>Throw Button</Button>
     )),
 };
 
@@ -47,6 +43,5 @@ export const WithLogInConstructor = {
 };
 
 export const WithWrongPropType = {
-  render: () =>
-    setConsoleOptions(() => <Badge info="Component with React Warning" />),
+  render: () => setConsoleOptions(() => <Badge info="Component with React Warning" />),
 };

@@ -1,7 +1,7 @@
-import welcome from "../docs/welcome";
+import welcome from '../docs/welcome';
 
 export default {
-  title: "Welcome",
+  title: 'Welcome',
   args: {},
 };
 

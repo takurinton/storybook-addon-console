@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 
 import React from "react";
-
 import { Button, Badge } from "./Component";
 
 const T = {
