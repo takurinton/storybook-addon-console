@@ -1,47 +1,38 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-import { setConsoleOptions } from '../src';
+import { withConsole } from '../src';
 import { Button, Badge } from './Component';
+
+const addConsole = (storyFn, context) => withConsole()(storyFn)(context);
 
 export default {
   title: 'With Console',
   component: Button,
   args: {},
+  decorators: [addConsole],
 };
 
 export const WithLog = {
-  render: () =>
-    setConsoleOptions(() => (
-      <Button onClick={() => console.log('Data:', 1, 3, 4)}>Log Button</Button>
-    )),
+  render: () => <Button onClick={() => console.log('Data:', 1, 3, 4)}>Log Button</Button>,
 };
 
 export const WithWarning = {
-  render: () =>
-    setConsoleOptions(() => (
-      <Button onClick={() => console.warn('Data:', 1, 3, 4)}>Warn Button</Button>
-    )),
+  render: () => <Button onClick={() => console.warn('Data:', 1, 3, 4)}>Warn Button</Button>,
 };
 
 export const WithError = {
-  render: () =>
-    setConsoleOptions(() => (
-      <Button onClick={() => console.error('Test Error')}>Error Button</Button>
-    )),
+  render: () => <Button onClick={() => console.error('Test Error')}>Error Button</Button>,
 };
 
 export const WithUncatchedError = {
-  render: () =>
-    setConsoleOptions(() => (
-      <Button onClick={() => console.log('Data:', T.buu.foo)}>Throw Button</Button>
-    )),
+  render: () => <Button onClick={() => console.log('Data:', T.buu.foo)}>Throw Button</Button>,
 };
 
 export const WithLogInConstructor = {
-  render: () => setConsoleOptions(() => <Badge info={42} />),
+  render: () => <Badge info={42} />,
 };
 
 export const WithWrongPropType = {
-  render: () => setConsoleOptions(() => <Badge info="Component with React Warning" />),
+  render: () => <Badge info="Component with React Warning" />,
 };

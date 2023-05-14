@@ -5,5 +5,5 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   collectCoverage: false,
   testEnvironment: 'jsdom',
-  setupTestFrameworkScriptFile: '<rootDir>/node_modules/jest-enzyme/lib/index.js',
+  setupFilesAfterEnv: ['./node_modules/jest-enzyme/lib/index.js'],
 };

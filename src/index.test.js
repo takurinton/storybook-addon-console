@@ -163,7 +163,10 @@ describe('addon Console', () => {
 
     describe('exclude everything via `...Include: [/(?!.*)/]`', () => {
       beforeEach(() => {
-        setConsoleOptions({ panelInclude: [/(?!.*)/], consoleInclude: [/(?!.*)/] });
+        setConsoleOptions({
+          panelInclude: [/(?!.*)/],
+          consoleInclude: [/(?!.*)/],
+        });
       });
       it('should not log anything at all', () => {
         logger.log(logString);
@@ -209,6 +212,7 @@ describe('addon Console', () => {
       kind: 'StoryKind',
       story: 'JestStory',
     };
+
     const root = global.document.createElement('div');
 
     beforeEach(() => {
